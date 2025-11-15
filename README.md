@@ -29,10 +29,10 @@ Based on your input and definition of the architectural design, pytm can automat
 The `tm.py` is an example model. You can run it to generate the report and diagram image files that it references:
 
 ```
-mkdir -p tm
-./tm.py --report docs/basic_template.md | pandoc -f markdown -t html > tm/report.html
-./tm.py --dfd | dot -Tpng -o tm/dfd.png
-./tm.py --seq | java -Djava.awt.headless=true -jar $PLANTUML_PATH -tpng -pipe > tm/seq.png
+mkdir -p tm-h2v
+./tm_h2v.py --report docs/basic_template.md | pandoc -f markdown -t html > tm_h2v/report.html
+./tm_h2v.py --dfd | dot -Tpng -o tm_h2v/dfd.png
+./tm_h2v.py --seq | java -Djava.awt.headless=true -jar $PLANTUML_PATH -tpng -pipe > tm_h2v/seq.png
 ```
 
 There's also an example `Makefile` that wraps all these into targets that can be easily shared for multiple models. If you have [GNU make](https://www.gnu.org/software/make/) installed (available by default on Linux distros but not on OSX), simply run:
